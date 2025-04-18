@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="../public/favicon-96.png" />
+    <link rel="apple-touch-icon" href="../public/favicon-180.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Invaders</title>
+    <meta
+      name="description"
+      content="A fun re-imagining of the 1978 classic Space Invaders by Tomohiro Nishikado and Taito. Play in 2D or 3D 3rd person mode in your web browser."
+    />
+    <meta property="og:title" content="Space Invaders in your browser" />
+    <meta property="og:type" content="game" />
+    <meta property="og:url" content="https://spaceinvaders.viperfish.com.au/" />
+    <meta
+      property="og:image"
+      content="https://spaceinvaders.viperfish.com.au/assets/images/space_Invaders_babylonjs_3.jpg"
+    />
+    <meta property="og:site_name" content="Space Invaders in your browser" />
+    <meta
+      property="og:description"
+      content="A fun re-imagining of the 1978 classic Space Invaders by Tomohiro Nishikado and Taito. Play in 2D or 3D 3rd person mode in your web browser."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@johnpitchers" />
+    <meta name="twitter:creator" content="@johnpitchers" />
+    <meta name="twitter:title" content="Space Invaders in your browser" />
+    <meta
+      name="twitter:description"
+      content="Play in your browser. A fun re-imagining of the 1978 classic Space Invaders by Tomohiro Nishikado and Taito. Play in 2D or 3D 3rd person mode in your web browser."
+    />
+    <meta
+      name="twitter:image:src"
+      content="https://spaceinvaders.viperfish.com.au/assets/images/space_Invaders_babylonjs_3.jpg"
+    />
+    <meta name="twitter:domain" content="spaceinvaders.viperfish.com.au" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.scss" />
+  </head>
+  <body>
+    <div id="container">
+      <canvas></canvas>
+      <div id="ui" class="active">
+        <div id="title-screen" class="active">
+          <div id="title">
+            <div class="layer layer1">SPACE<br />INVADERS</div>
+            <div class="layer layer2">SPACE<br />INVADERS</div>
+            <div class="layer layer3">SPACE<br />INVADERS</div>
+          </div>
+          <div id="portrait-warning">Best played in landscape</div>
+          <div id="credits">
+            <div>
+              <p>------</p>
+              <p>Arrow keys to move <br />Shift, Space or Enter to shoot</p>
+              <p>------</p>
+              <div class="small">
+                <p>2025 by Kunal Sharma</p>
+                <p>
+                  Built with BabylonJS. 3D models created in Blender. Sound
+                  effects by Ayush Jha
+                </p>
+                <!-- <p>All code and models on Github: https://github.com/johnpitchers/Space-Invaders</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="game-ui" class="">
+          <div id="panel-game-over" class="">GAME OVER</div>
+          <div id="panel-new-highscore" class="">
+            **** NEW HIGH SCORE ****<br />
+            <div class="value">0</div>
+          </div>
+          <div id="panel-game-hints">
+            ---==Ξ <span class="lg">!</span> Ξ==---
+            <div class="value"></div>
+            ---==Ξ==---
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="loading" class="active">LOADING<br />...</div>
+    <div id="intro" class="">
+      <p>
+        Select mode<br /><select id="change-mode">
+          <option value="0">Traditional 2D</option>
+          <option value="1">2D oldschool CRT</option>
+          <option value="2">Action cam 3D</option>
+        </select>
+      </p>
+      <p>
+        <button id="start-game">START GAME</button>
+      </p>
+    </div>
+    <div id="panel-play-again" class="">
+      <button id="play-again">PLAY AGAIN</button>
+    </div>
+    <script type="module" src="./main.js"></script>
+    <script>
+      loading();
+
+      function loading() {
+        setTimeout(function () {
+          let el = document.querySelector("#loading");
+          el.append(".");
+          if (el.classList.contains("active")) {
+            loading();
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
