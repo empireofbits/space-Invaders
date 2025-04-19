@@ -1,7 +1,6 @@
 # Space Invaders
-A fun re-imagining of the 1978 classic by Tomohiro Nishikado and Taito.
+A fun re-imagining of the 1978 classic by Kunal Sharma.
 
-Play it here: https://spaceinvaders.viperfish.com.au
 
 ![Space Invaders Screenshot](https://spaceinvaders.viperfish.com.au/assets/images/space_Invaders_babylonjs_2.jpg)
 
