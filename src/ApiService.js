@@ -20,7 +20,7 @@ export class ApiService {
 
     try {
       const response = await fetch(
-        "https://backend.empireofbits.fun/api/v1/games/spaceinvaders",
+        "https://backend1.empireofbits.fun/api/v1/games/spaceinvaders",
         {
           method: "POST",
           headers: {
@@ -52,7 +52,7 @@ export class ApiService {
 
     try {
       const response = await fetch(
-        `https://backend.empireofbits.fun/api/v1/games/spaceinvaders/${userId}/session`,
+        `https://backend1.empireofbits.fun/api/v1/games/spaceinvaders/${userId}/session`,
         {
           method: "POST",
           headers: {
