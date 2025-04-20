@@ -3,7 +3,7 @@ export class ApiService {
   static getUserIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
     console.log(params);
-    const userId = params.get("query");
+    const userId = params.get("wallet");
 
     console.log("Extracted userId:", userId); // Debugging line
     return userId;
