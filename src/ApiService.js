@@ -11,22 +11,22 @@ export class ApiService {
 
   // Initialize the game
   static async initializeGame() {
-    const userId = this.getUserIdFromUrl();
+    const walletAddress = this.getUserIdFromUrl();
 
-    if (!userId) {
+    if (!walletAddress) {
       console.error("User ID not found in URL");
       return { success: false, error: "User ID not found" };
     }
 
     try {
       const response = await fetch(
-        "https://backend1.empireofbits.fun/api/v1/games/spaceinvaders",
+        "https://be1.rostrafi.fun/api/v1/games/spaceinvaders",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ userId }),
+          body: JSON.stringify({ walletAddress }),
         }
       );
 
@@ -43,16 +43,16 @@ export class ApiService {
 
   // Record a game session
   static async recordGameSession(score, level = 1) {
-    const userId = this.getUserIdFromUrl();
+    const walletAddress = this.getUserIdFromUrl();
 
-    if (!userId) {
+    if (!walletAddress) {
       console.error("User ID not found in URL");
       return { success: false, error: "User ID not found" };
     }
 
     try {
       const response = await fetch(
-        `https://backend1.empireofbits.fun/api/v1/games/spaceinvaders/${userId}/session`,
+        `https://be1.rostrafi.fun/api/v1/games/spaceinvaders/${walletAddress}/session`,
         {
           method: "POST",
           headers: {
